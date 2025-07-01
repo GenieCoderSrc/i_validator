@@ -1,5 +1,10 @@
 # 📄 CHANGELOG
 
+## 1.0.1
+### Jul 1, 2025
+### ✅ Updated
+- Updated example files
+
 ## 1.0.0
 ### Jul 1, 2025
 ### ✅ Added
