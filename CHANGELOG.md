@@ -1,14 +1,40 @@
-# Changelog
+# 📄 CHANGELOG
 
-All notable changes to this project will be documented in this file.
+## 1.0.0
+### Jul 1, 2025
+### ✅ Added
+- `OtpValidator` with custom length support
+- `PasswordValidator` with `PasswordStrength` enum (`easy`, `medium`, `strong`)
+- `ConfirmPasswordValidator` that compares two passwords
+- `PinNumberValidator` for 4 or 6 digit PIN
+- `PhoneNumberValidator` using regex pattern
+- `EmailValidator` with format validation
+- `NonEmptyStringValidator` (basic text required)
+- `RequiredFieldValidator<T>` for nullable objects
+- `MinValueValidator<T extends num>` for numerical min constraints
+- `MaxValueValidator<T extends num>` for numerical max constraints
 
-## 0.0.4
-- example file
+### ♻️ Changed
+- `IValidator` interface updated from:
+  ```dart
+  abstract class IValidator {
+    String? validate(String input);
+  }
+  ```
+  to generic:
+  ```dart
+  abstract class IValidator<T> {
+    String? validate(T input);
+  }
+  ```
 
+### 🧪 Usage
+For usage examples, see: `validator_example.dart`
+
+---
 
 ## 0.0.3
-- CHANGELOG.md  file
-
+- Update Documentations
 
 ## 0.0.2
 ### Added
