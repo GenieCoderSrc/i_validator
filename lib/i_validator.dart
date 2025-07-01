@@ -7,7 +7,6 @@ export 'extensions/validator_patterns.dart';
 export 'utils/validator_mixin.dart';
 export 'utils/verify.dart';
 export 'validators/confirm_password_required_validator.dart';
-export 'validators/confirm_password_required_validator.dart';
 export 'validators/confirm_password_validator.dart';
 export 'validators/email_validator.dart';
 export 'validators/i_validator.dart';
