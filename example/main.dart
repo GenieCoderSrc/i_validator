@@ -58,39 +58,3 @@ void main() {
   debugPrint('Within max: ${maxDoubleValidator.validate(88.88) ?? "✔"}');
   debugPrint('Exceed max: ${maxDoubleValidator.validate(120.0) ?? "✔"}');
 }
-
-// void main() {
-//   // Example usage of validators
-//
-//   // Email Validation
-//   String email = "test@example.com";
-//   String? emailError = EmailValidator().validate(email);
-//   debugdebugPrint("main | $emailError ?? Valid Email");
-//
-//   // Password Validation
-//   String password = "Test@123";
-//   String? passwordError = PasswordValidator().validate(password);
-//   debugdebugPrint(passwordError ?? "Valid Password");
-//
-//   // Confirm Password Validation
-//   String confirmPassword = "Test@123";
-//   String? confirmPasswordError = ConfirmPasswordValidator(
-//     password: password,
-//   ).validate(confirmPassword);
-//   debugdebugPrint(confirmPasswordError ?? "Passwords Match");
-//
-//   // Phone Number Validation
-//   String phoneNumber = "+1234567890";
-//   String? phoneError = PhoneNumberValidator().validate(phoneNumber);
-//   debugdebugPrint(phoneError ?? "Valid Phone Number");
-//
-//   // OTP Validation
-//   String otp = "123456";
-//   String? otpError = OtpValidator().validate(otp);
-//   debugdebugPrint(otpError ?? "Valid OTP");
-//
-//   // Required Field Validation
-//   String requiredField = "";
-//   String? requiredFieldError = RequiredFieldValidator().validate(requiredField);
-//   debugdebugPrint(requiredFieldError ?? "Field is filled");
-// }
