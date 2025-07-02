@@ -1,57 +1,63 @@
-# 📄 CHANGELOG
+# Changelog
 
-## 1.0.1
-### Jul 1, 2025
-### ✅ Updated
-- Updated example files
+All notable changes to this project will be documented in this file.
 
-## 1.0.0
-### Jul 1, 2025
-### ✅ Added
-- `OtpValidator` with custom length support
-- `PasswordValidator` with `PasswordStrength` enum (`easy`, `medium`, `strong`)
-- `ConfirmPasswordValidator` that compares two passwords
-- `PinNumberValidator` for 4 or 6 digit PIN
-- `PhoneNumberValidator` using regex pattern
-- `EmailValidator` with format validation
-- `NonEmptyStringValidator` (basic text required)
-- `RequiredFieldValidator<T>` for nullable objects
-- `MinValueValidator<T extends num>` for numerical min constraints
-- `MaxValueValidator<T extends num>` for numerical max constraints
-
-### ♻️ Changed
-- `IValidator` interface updated from:
-  ```dart
-  abstract class IValidator {
-    String? validate(String input);
-  }
-  ```
-  to generic:
-  ```dart
-  abstract class IValidator<T> {
-    String? validate(T input);
-  }
-  ```
-
-### 🧪 Usage
-For usage examples, see: `validator_example.dart`
+### **Version 1.0.2** (Jul 3, 2025)
+**✅ Added**  
+New validators for comprehensive input validation:
+- `MinLengthValidator` – Ensures minimum string length
+- `RegexValidator` – Custom regex pattern validation
+- `RequiredDateValidator` – Validates mandatory date input
+- `RequiredListValidator` – Checks if a list is non-empty
+- `RequiredStringValidator` – Ensures non-empty strings
+- `RequiredTrueValidator` – Validates boolean `true` values
 
 ---
 
-## 0.0.3
-- Update Documentations
+### **Version 1.0.1** (Jul 1, 2025)
+**✅ Updated**
+- Example files refined for better clarity.
 
-## 0.0.2
-### Added
-- Email validation with `EmailValidator`
-- Password validation with `PasswordValidator`
-- Confirm password validation with `ConfirmPasswordValidator`
-- Phone number validation with `PhoneNumberValidator`
-- OTP validation with `OtpValidator`
-- Required field validation with `RequiredFieldValidator`
-- Utility functions for validation patterns
-- File validation extension for image format checking
-- `ValidatorMixin` for Stream-based validation handling
+---
 
-## 0.0.1
-- Initial Release
+### **Version 1.0.0** (Jul 1, 2025)
+**✅ Added**  
+Core validators:
+- `OtpValidator` – Custom OTP length support
+- `PasswordValidator` – Strength levels (`easy`, `medium`, `strong`)
+- `ConfirmPasswordValidator` – Compares two passwords
+- `PinNumberValidator` – 4 or 6-digit PIN validation
+- `PhoneNumberValidator` – Regex-based phone validation
+- `EmailValidator` – Format validation
+- `NonEmptyStringValidator` – Basic text requirement
+- `RequiredFieldValidator<T>` – Nullable object checks
+- `MinValueValidator<T extends num>` – Numerical minimum constraints
+- `MaxValueValidator<T extends num>` – Numerical maximum constraints
+
+**♻️ Changed**
+- `IValidator` interface now generic:
+  ```dart
+  abstract class IValidator<T> { String? validate(T input); }
+  ```
+
+**🧪 Usage**  
+See `validator_example.dart` for examples.
+
+---
+
+### **Version 0.0.3**
+- Documentation updates.
+
+### **Version 0.0.2**
+**✅ Added**  
+Initial validators:
+- Email, password, OTP, phone number, and field validation
+- Utility functions for patterns
+- Image file validation extension
+- `ValidatorMixin` for Stream-based validation
+
+### **Version 0.0.1**
+- Initial release.
+
+---  
+*For detailed usage, refer to the example files.*

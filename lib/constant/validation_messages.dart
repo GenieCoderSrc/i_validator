@@ -25,3 +25,4 @@ const kNameInvalidError = 'Please Enter your Name';
 const kOtpCodeInvalidError = 'Invalid OTP code';
 const kPinNumberInvalidError = 'Pin Number Should be 4 or 6 Digits';
 const kEmailOrMobileInvalidError = 'Invalid Email Or Mobile';
+const kMustBeEnabledError = 'You must accept this field';

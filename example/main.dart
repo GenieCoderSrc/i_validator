@@ -1,60 +1,108 @@
 import 'package:flutter/foundation.dart';
 import 'package:i_validator/i_validator.dart';
 
-void main() {
-  debugPrint('--- 📌 OtpValidator ---');
-  final otpValidator = OtpValidator(length: 6);
-  debugPrint('Valid OTP: ${otpValidator.validate("123456") ?? "✔"}');
-  debugPrint('Invalid OTP: ${otpValidator.validate("123") ?? "✔"}');
 
-  debugPrint('\n--- 🔐 PasswordValidator (strong) ---');
+void main() {
+  // --- 🔐 SECURITY VALIDATORS ---
+  debugPrint('\n--- 🔐 SECURITY VALIDATORS ---');
+
+  debugPrint('\n📌 OtpValidator (6-digit)');
+  final otpValidator = OtpValidator(length: 6);
+  debugPrint('  Valid OTP: ${otpValidator.validate("123456") ?? "✅ Valid"}');
+  debugPrint('  Invalid OTP: ${otpValidator.validate("123") ?? "✅ Valid"}');
+
+  debugPrint('\n🔐 PasswordValidator (strong)');
   final passwordValidator = PasswordValidator(
     minLength: 8,
     strength: PasswordStrength.strong,
   );
   debugPrint(
-    'Valid Password: ${passwordValidator.validate("Strong@123") ?? "✔"}',
+    '  Valid Password: ${passwordValidator.validate("Strong@123") ?? "✅ Valid"}',
   );
-  debugPrint('Weak Password: ${passwordValidator.validate("12345") ?? "✔"}');
+  debugPrint(
+    '  Weak Password: ${passwordValidator.validate("weak") ?? "✅ Valid"}',
+  );
 
-  debugPrint('\n--- 🔁 ConfirmPasswordValidator ---');
+  debugPrint('\n🔄 ConfirmPasswordValidator');
   final confirmValidator = ConfirmPasswordValidator(password: "Strong@123");
-  debugPrint('Match: ${confirmValidator.validate("Strong@123") ?? "✔"}');
-  debugPrint('Mismatch: ${confirmValidator.validate("WrongOne") ?? "✔"}');
+  debugPrint(
+    '  Match: ${confirmValidator.validate("Strong@123") ?? "✅ Valid"}',
+  );
+  debugPrint(
+    '  Mismatch: ${confirmValidator.validate("WrongPass") ?? "✅ Valid"}',
+  );
 
-  debugPrint('\n--- 📱 PhoneNumberValidator ---');
-  final phoneValidator = PhoneNumberValidator();
-  debugPrint('Valid phone: ${phoneValidator.validate("01712345678") ?? "✔"}');
-  debugPrint('Invalid phone: ${phoneValidator.validate("12345") ?? "✔"}');
-
-  debugPrint('\n--- 📧 EmailValidator ---');
-  final emailValidator = EmailValidator();
-  debugPrint('Valid email: ${emailValidator.validate("me@mail.com") ?? "✔"}');
-  debugPrint('Invalid email: ${emailValidator.validate("bademail") ?? "✔"}');
-
-  debugPrint('\n--- 🔢 PinNumberValidator ---');
+  debugPrint('\n🔢 PinNumberValidator');
   final pinValidator = PinNumberValidator();
-  debugPrint('Valid 4-digit PIN: ${pinValidator.validate("1234") ?? "✔"}');
-  debugPrint('Valid 6-digit PIN: ${pinValidator.validate("123456") ?? "✔"}');
-  debugPrint('Invalid PIN: ${pinValidator.validate("999") ?? "✔"}');
+  debugPrint('  Valid 4-digit: ${pinValidator.validate("1234") ?? "✅ Valid"}');
+  debugPrint(
+    '  Valid 6-digit: ${pinValidator.validate("123456") ?? "✅ Valid"}',
+  );
+  debugPrint('  Invalid: ${pinValidator.validate("12") ?? "✅ Valid"}');
 
-  debugPrint('\n--- ❗ RequiredFieldValidator<int> ---');
-  final requiredInt = RequiredFieldValidator<int>();
-  debugPrint('Valid int: ${requiredInt.validate(0) ?? "✔"}');
-  debugPrint('Invalid int: ${requiredInt.validate(null) ?? "✔"}');
+  // --- 📝 TEXT VALIDATORS ---
+  debugPrint('\n--- 📝 TEXT VALIDATORS ---');
 
-  debugPrint('\n--- 📝 RequiredStringValidator (non-empty) ---');
-  final requiredStr = NonEmptyStringValidator();
-  debugPrint('Valid text: ${requiredStr.validate("Hello") ?? "✔"}');
-  debugPrint('Empty text: ${requiredStr.validate("") ?? "✔"}');
+  debugPrint('\n📧 EmailValidator');
+  final emailValidator = EmailValidator();
+  debugPrint('  Valid: ${emailValidator.validate("me@mail.com") ?? "✅ Valid"}');
+  debugPrint('  Invalid: ${emailValidator.validate("bad@email") ?? "✅ Valid"}');
 
-  debugPrint('\n--- 🔢 MinValueValidator<int> ---');
+  debugPrint('\n📱 PhoneNumberValidator');
+  final phoneValidator = PhoneNumberValidator();
+  debugPrint('  Valid: ${phoneValidator.validate("01712345678") ?? "✅ Valid"}');
+  debugPrint('  Invalid: ${phoneValidator.validate("123") ?? "✅ Valid"}');
+
+  debugPrint('\n📏 MinLengthValidator (min: 5)');
+  final minLengthValidator = MinLengthValidator(5);
+  debugPrint('  Valid: ${minLengthValidator.validate("Hello") ?? "✅ Valid"}');
+  debugPrint('  Invalid: ${minLengthValidator.validate("Hi") ?? "✅ Valid"}');
+
+  debugPrint('\n🔄 RegexValidator (Uppercase first)');
+  final regexValidator = RegexValidator(
+    pattern: r'^[A-Z][a-z]*$',
+    errorText: "Must start with uppercase",
+  );
+  debugPrint('  Valid: ${regexValidator.validate("Flutter") ?? "✅ Valid"}');
+  debugPrint('  Invalid: ${regexValidator.validate("dart") ?? "✅ Valid"}');
+
+  // --- 🔢 NUMERIC VALIDATORS ---
+  debugPrint('\n--- 🔢 NUMERIC VALIDATORS ---');
+
+  debugPrint('\n⬆️ MinValueValidator<int> (min: 10)');
   final minIntValidator = MinValueValidator<int>(min: 10);
-  debugPrint('Above min: ${minIntValidator.validate(15) ?? "✔"}');
-  debugPrint('Below min: ${minIntValidator.validate(5) ?? "✔"}');
+  debugPrint('  Valid (15): ${minIntValidator.validate(15) ?? "✅ Valid"}');
+  debugPrint('  Invalid (5): ${minIntValidator.validate(5) ?? "✅ Valid"}');
 
-  debugPrint('\n--- 🔢 MaxValueValidator<double> ---');
+  debugPrint('\n⬇️ MaxValueValidator<double> (max: 99.5)');
   final maxDoubleValidator = MaxValueValidator<double>(max: 99.5);
-  debugPrint('Within max: ${maxDoubleValidator.validate(88.88) ?? "✔"}');
-  debugPrint('Exceed max: ${maxDoubleValidator.validate(120.0) ?? "✔"}');
+  debugPrint(
+    '  Valid (88.8): ${maxDoubleValidator.validate(88.8) ?? "✅ Valid"}',
+  );
+  debugPrint(
+    '  Invalid (120.0): ${maxDoubleValidator.validate(120.0) ?? "✅ Valid"}',
+  );
+
+  // --- ✔️ REQUIRED VALIDATORS ---
+  debugPrint('\n--- ✔️ REQUIRED VALIDATORS ---');
+
+  debugPrint('\n❗ RequiredFieldValidator<String>');
+  final requiredStr = RequiredFieldValidator<String>();
+  debugPrint('  Valid: ${requiredStr.validate("Text") ?? "✅ Valid"}');
+  debugPrint('  Invalid: ${requiredStr.validate("") ?? "✅ Valid"}');
+
+  debugPrint('\n📅 RequiredDateValidator');
+  final requiredDate = RequiredDateValidator();
+  debugPrint('  Valid: ${requiredDate.validate(DateTime.now()) ?? "✅ Valid"}');
+  debugPrint('  Invalid: ${requiredDate.validate(null) ?? "✅ Valid"}');
+
+  debugPrint('\n📋 RequiredListValidator');
+  final requiredList = RequiredListValidator();
+  debugPrint('  Valid: ${requiredList.validate([1, 2]) ?? "✅ Valid"}');
+  debugPrint('  Invalid: ${requiredList.validate([]) ?? "✅ Valid"}');
+
+  debugPrint('\n🔘 RequiredTrueValidator');
+  final requiredTrue = RequiredTrueValidator();
+  debugPrint('  Valid: ${requiredTrue.validate(true) ?? "✅ Valid"}');
+  debugPrint('  Invalid: ${requiredTrue.validate(false) ?? "✅ Valid"}');
 }

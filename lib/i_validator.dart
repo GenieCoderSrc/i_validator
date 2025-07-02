@@ -1,3 +1,9 @@
+export 'package:i_validator/validators/min_length_validator.dart';
+export 'package:i_validator/validators/regex_validator.dart';
+export 'package:i_validator/validators/required_date_validator.dart';
+export 'package:i_validator/validators/required_list_validator.dart';
+export 'package:i_validator/validators/required_true_validator.dart';
+
 export 'constant/reg_constant.dart';
 export 'constant/validation_messages.dart';
 export 'constant/validation_patterns.dart';

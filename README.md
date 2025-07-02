@@ -1,110 +1,112 @@
 # i_validator
 
-A Flutter package that provides various validation utilities for email, password, phone number, OTP, and required fields. It includes predefined regular expressions and validation classes to ensure proper input validation in Flutter applications.
+A Flutter package offering robust validation utilities for forms, inputs, and business logic. Includes predefined validators for strings, numbers, dates, lists, and custom regex patterns with type-safe generic support.
 
-## Features
+---
 
-- ✅ **Generic Validator Interface**: `IValidator<T>` now supports any input type, improving reusability and type safety.
-- **Email Validation**: Checks if an email address is properly formatted.
-- **Password Validation**: Ensures passwords meet security requirements (e.g., uppercase, lowercase, number, special character, minimum length).
-- **Confirm Password Validation**: Verifies that the confirmation password matches the original password.
-- **Phone Number Validation**: Checks for valid phone number formats.
-- **OTP Validation**: Ensures OTP codes are of the correct length.
-- **Required Field Validation**: Ensures required fields are not left empty.
-- **Min/Max Value Validation**: Generic number range validators for numeric fields.
-- **File Validation**: Checks for valid image file formats.
+## **Features**
 
-## Installation
+### **📜 Core Validators**
+- **`IValidator<T>`** – Generic interface for all validators (supports any input type).
+- **`RequiredFieldValidator<T>`** – Ensures non-null/non-empty values for any type.
+- **`RequiredStringValidator`** – Non-empty text validation.
+- **`RequiredTrueValidator`** – Boolean `true` validation (e.g., for checkboxes).
+- **`RequiredListValidator`** – Validates non-empty lists.
+- **`RequiredDateValidator`** – Ensures a date is provided.
 
-Add this to your `pubspec.yaml`:
+### **🔢 Numeric Validators**
+- **`MinValueValidator<T extends num>`** – Checks minimum value (int/double).
+- **`MaxValueValidator<T extends num>`** – Checks maximum value (int/double).
 
+### **📝 Text Validators**
+- **`EmailValidator`** – RFC-compliant email format validation.
+- **`PasswordValidator`** – Configurable strength levels (`easy`, `medium`, `strong`).
+- **`MinLengthValidator`** – Enforces minimum string length.
+- **`RegexValidator`** – Custom regex pattern validation (e.g., URLs, usernames).
+- **`PhoneNumberValidator`** – Global phone number format support.
+
+### **🔐 Security Validators**
+- **`OtpValidator`** – Validates OTP codes (custom length).
+- **`PinNumberValidator`** – 4 or 6-digit PIN validation.
+- **`ConfirmPasswordValidator`** – Compares two password fields.
+
+### **📂 File Validation**
+- **File type validation** – Checks image formats (e.g., PNG, JPEG) via extensions.
+
+---
+
+## **🚀 Installation**
+Add to `pubspec.yaml`:
 ```yaml
 dependencies:
-  i_validator: latest_version
+  i_validator: <latest_version>
 ```
-
-Then, run:
-
+Run:
 ```sh
 flutter pub get
 ```
 
-## Usage
+---
 
-Import the package:
+## **🛠 Usage**
 
+### **1. Email Validation**
 ```dart
-import 'package:i_validator/i_validator.dart';
+final error = EmailValidator().validate("invalid-email");  
+print(error); // "Enter a valid email"  
 ```
 
-### Email Validation
-
+### **2. Password Validation (Strong)**
 ```dart
-String? emailError = EmailValidator().validate("test@example.com");
-if (emailError != null) {
-  print(emailError); // "Enter valid Email"
-}
+final validator = PasswordValidator(  
+  minLength: 8,  
+  strength: PasswordStrength.strong, // Requires uppercase, number, symbol  
+);  
+print(validator.validate("weak")); // "Password must be at least 8 characters"  
 ```
 
-### Password Validation (Strong)
-
+### **3. OTP Validation (6-digit)**
 ```dart
-String? passwordError = PasswordValidator(
-  minLength: 8,
-  strength: PasswordStrength.strong,
-).validate("Test@123");
-if (passwordError != null) {
-  print(passwordError); // "Invalid Password"
-}
+final error = OtpValidator(length: 6).validate("123");  
+print(error); // "OTP must be 6 digits"  
 ```
 
-### Confirm Password Validation
-
+### **4. Required Field Validation**
 ```dart
-String? confirmPasswordError = ConfirmPasswordValidator(password:"Test@123")
-    .validate("Test@123");
-if (confirmPasswordError != null) {
-  print(confirmPasswordError); // "Password doesn't match"
-}
+final error = RequiredFieldValidator<String>().validate("");  
+print(error); // "This field is required"  
 ```
 
-### Phone Number Validation
-
+### **5. Custom Regex Validation**
 ```dart
-String? phoneError = PhoneNumberValidator().validate("01712345678");
-if (phoneError != null) {
-  print(phoneError); // "Invalid Phone Number"
-}
+final validator = RegexValidator(  
+  pattern: r'^[A-Z][a-z]*$', // Starts with uppercase  
+  errorText: "Must start with a capital letter",  
+);  
+print(validator.validate("flutter")); // Error message  
 ```
 
-### OTP Validation (6-digit)
-
+### **6. List Validation**
 ```dart
-String? otpError = OtpValidator(length: 6).validate("123456");
-if (otpError != null) {
-  print(otpError); // "Invalid OTP code"
-}
+final error = RequiredListValidator().validate([]);  
+print(error); // "List cannot be empty"  
 ```
 
-### Required Field Validation (Generic)
-
+### **7. Date Validation**
 ```dart
-String? requiredError = RequiredFieldValidator<String>().validate("");
-if (requiredError != null) {
-  print(requiredError); // "Required Field Can't Be Empty"
-}
+final error = RequiredDateValidator().validate(null);  
+print(error); // "A date is required"  
 ```
 
-### Min/Max Value Validation
+---
 
-```dart
-final minValidator = MinValueValidator<int>(min: 10);
-print(minValidator.validate(5)); // "Value must be at least 10"
+## **📜 License**
+MIT – See [LICENSE](LICENSE) for details.
 
-final maxValidator = MaxValueValidator<double>(max: 100.0);
-print(maxValidator.validate(150.0)); // "Value must be at most 100.0"
-```
+---
 
-## License
+### **🔗 Links**
+- [Example File](validator_example.dart)
+- [CHANGELOG](CHANGELOG.md)
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+--- 
