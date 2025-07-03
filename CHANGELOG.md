@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 
 
+### **Version 1.0.4** (Jul 3, 2025)
+**✅ Updated**
+- Uses VALIDATOR USAGE files Links in the README Section.
+
+---
+
+
 ### **Version 1.0.3** (Jul 3, 2025)
 **✅ Added**
 - VALIDATOR USAGE Example files refined for better clarity.

@@ -106,8 +106,6 @@ MIT – See [LICENSE](LICENSE) for details.
 ---
 
 ### **🔗 Links**
-- [Example File](example/main.dart)
 - [VALIDATOR USAGE](doc/VALIDATOR_USAGE.md)
-- [CHANGELOG](CHANGELOG.md)
 
 --- 
