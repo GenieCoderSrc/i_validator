@@ -2,15 +2,28 @@
 
 All notable changes to this project will be documented in this file.
 
+
+## 1.0.7
+
+### Jul 16, 2025
+
+**✅ Added**
+
+* `FileValidationExtension` with `validateExtension` method to validate file extensions.
+
+---
+
+
 ## 1.0.6
 
 ### Jul 16, 2025
 
 **✅ Added**
 
-* `FileValidationExtension` with `validateNotEmpty`, `validateMaxSize`, and `validateExtension` method to validate file extensions.
+* `FileValidationExtension` with `validateMaxSize`, and `validateExtension` method to validate file extensions.
 
 ---
+
 
 ## 1.0.5
 
