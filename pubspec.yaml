@@ -1,6 +1,6 @@
 name: i_validator
 description: "i_validator package provides a collection of common validation utilities such as email, password, phone number, OTP, and required fields validation. It also includes custom validation for confirm passwords and file formats, along with mixins for Stream-based validation."
-version: 1.0.7
+version: 1.0.8
 
 homepage: https://github.com/GenieCoderSrc/i_validator
 repository: https://github.com/GenieCoderSrc/i_validator
