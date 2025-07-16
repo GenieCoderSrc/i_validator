@@ -1,3 +1,3 @@
 abstract class IValidator<T> {
-  String? validate(T input);
+  String? validate(T? input);
 }

@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file.
 
+## 1.1.0
+
+### Jul 16, 2025
+
+**♻️ Changed**
+
+* Updated `IValidator` interface to accept nullable input: `validate(T? input)`.
+* Refactored `ConfirmPasswordRequiredValidator` to handle nullable `String?` input accordingly.
+
+
 ## 1.0.9
 
 ### Jul 16, 2025
