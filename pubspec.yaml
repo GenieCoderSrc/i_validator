@@ -1,6 +1,6 @@
 name: i_validator
 description: "i_validator package provides a collection of common validation utilities such as email, password, phone number, OTP, and required fields validation. It also includes custom validation for confirm passwords and file formats, along with mixins for Stream-based validation."
-version: 1.0.4
+version: 1.0.5
 homepage: https://github.com/GenieCoderSrc/i_validator
 repository: https://github.com/GenieCoderSrc/i_validator
 issue_tracker: https://github.com/GenieCoderSrc/i_validator/issues
@@ -13,6 +13,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+    
+  cross_file: ^0.3.4+2
 
 dev_dependencies:
   flutter_test:
