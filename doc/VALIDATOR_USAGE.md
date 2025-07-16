@@ -98,5 +98,5 @@ final file = File('path/to/image.jpg');
 print(file.validateImage());       // null if valid image
 print(file.validateNotEmpty());    // null if not empty
 print(file.validateMaxSize(50000)); // error if > 50KB
-print(file.validateExtension(['jpg', 'png'])); // null if valid extension
+print(file.validateExtension(['pdf', 'xps'])); // null if valid extension
 ```
