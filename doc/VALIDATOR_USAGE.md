@@ -86,8 +86,12 @@ class CustomValidator implements IValidator<String> {
 ```dart
 
 // Usage Example:
-final path = 'assets/photo.jpg';
-print(path.isValidImagePath); // true
+final path1 = 'assets/image.png';
+final path2 = 'assets/file.txt';
+
+print(path1.validateImagePath()); // null (valid)
+print(path2.validateImagePath()); // error message
+
 ```
 
 ## ✅ FileValidationExtension
