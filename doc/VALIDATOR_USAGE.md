@@ -86,11 +86,14 @@ class CustomValidator implements IValidator<String> {
 ```dart
 
 // Usage Example:
-final path1 = 'assets/image.png';
-final path2 = 'assets/file.txt';
+String? path1 = 'assets/image.jpg';
+String? path2 = null;
+String? path3 = 'assets/file.txt';
 
 print(path1.validateImagePath()); // null (valid)
-print(path2.validateImagePath()); // error message
+print(path2.validateImagePath()); // "Image path cannot be empty."
+print(path3.validateImagePath()); // "Invalid image path..."
+
 
 ```
 

@@ -1,8 +1,12 @@
-extension ImageValidationExtension on String {
-  /// Validates if the string is a valid image file path.
-  /// Returns `null` if valid, otherwise returns an error message.
+extension ImageValidationExtension on String? {
+  /// Validates if the nullable string is a valid image file path.
+  /// Returns `null` if valid, otherwise an error message.
   String? validateImagePath() {
-    final lowerPath = toLowerCase();
+    if (this == null || this!.trim().isEmpty) {
+      return 'Image path cannot be empty.';
+    }
+
+    final lowerPath = this!.toLowerCase();
     final validExtensions = [
       '.jpg',
       '.jpeg',

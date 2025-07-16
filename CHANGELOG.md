@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file.
 
+## 1.0.9
+
+### Jul 16, 2025
+
+**♻️ Changed**
+
+* `ImageValidationExtension` updated to work on `String?` (nullable image path).
+
+---
+
 ## 1.0.8
 
 ### Jul 16, 2025
