@@ -2,28 +2,35 @@
 
 All notable changes to this project will be documented in this file.
 
+## 1.0.8
+
+### Jul 16, 2025
+
+**♻️ Changed**
+
+* `ImageValidationExtension.isValidImagePath` updated to return `String?` via `validateImagePath()` method for error messaging.
+
+---
 
 ## 1.0.7
 
 ### Jul 16, 2025
 
-**✅ Added**
+**✅ Updated**
 
-* `FileValidationExtension` with `validateExtension` method to validate file extensions.
+* export `ImageValidationExtension` file.
 
 ---
-
 
 ## 1.0.6
 
 ### Jul 16, 2025
 
-**✅ Added**
+**✅ Removed**
 
-* `FileValidationExtension` with `validateMaxSize`, and `validateExtension` method to validate file extensions.
+* Removed cross\_file package dependency.
 
 ---
-
 
 ## 1.0.5
 

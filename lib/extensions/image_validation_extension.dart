@@ -1,7 +1,7 @@
 extension ImageValidationExtension on String {
-  /// Checks if the current string is a valid image file path.
-  /// Supports jpg, jpeg, png, gif, bmp, webp, and svg.
-  bool get isValidImagePath {
+  /// Validates if the string is a valid image file path.
+  /// Returns `null` if valid, otherwise returns an error message.
+  String? validateImagePath() {
     final lowerPath = toLowerCase();
     final validExtensions = [
       '.jpg',
@@ -13,6 +13,11 @@ extension ImageValidationExtension on String {
       '.svg',
     ];
 
-    return validExtensions.any(lowerPath.endsWith);
+    final isValid = validExtensions.any(lowerPath.endsWith);
+    if (!isValid) {
+      return 'Invalid image path. Supported formats: ${validExtensions.join(', ')}';
+    }
+
+    return null;
   }
 }
