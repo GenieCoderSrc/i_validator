@@ -14,5 +14,3 @@ class MinLengthValidator extends IValidator<String> {
     return null;
   }
 }
-
-

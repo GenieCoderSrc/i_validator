@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file.
 
+## 1.1.1
+
+### Jul 21, 2025
+
+**♻️ Changed**
+
+* Added default implementation for `call()` method inside `IValidator` interface:
+
+  ```dart
+  abstract class IValidator<T> {
+    String? validate(T? input);
+
+    String? call(T? input) => validate(input); // Default implementation
+  }
+  ```
+
+---
+
 ## 1.1.0
 
 ### Jul 16, 2025
@@ -11,6 +29,7 @@ All notable changes to this project will be documented in this file.
 * Updated `IValidator` interface to accept nullable input: `validate(T? input)`.
 * Refactored `ConfirmPasswordRequiredValidator` to handle nullable `String?` input accordingly.
 
+---
 
 ## 1.0.9
 
@@ -131,10 +150,12 @@ Core validators:
 * `IValidator` interface now generic:
 
   ```dart
-  abstract class IValidator<T> { String? validate(T input); }
+  abstract class IValidator<T> {
+    String? validate(T input);
+  }
   ```
 
-**🧪 Usage**
+**🤪 Usage**
 See `validator_example.dart` for examples.
 
 ---
