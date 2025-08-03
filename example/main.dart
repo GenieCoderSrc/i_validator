@@ -1,7 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:i_validator/i_validator.dart';
 
-
 void main() {
   // --- 🔐 SECURITY VALIDATORS ---
   debugPrint('\n--- 🔐 SECURITY VALIDATORS ---');

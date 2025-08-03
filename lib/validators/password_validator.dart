@@ -30,6 +30,4 @@ class PasswordValidator extends IValidator<String> {
     }
     return null;
   }
-
- 
 }
