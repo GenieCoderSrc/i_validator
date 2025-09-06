@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file.
 
+## 1.1.3
+
+### Sep 5, 2025
+
+### ✨ Fixed
+
+- Fixed email regex pattern,
+- Fixed image regex pattern,
+- Fixed PhoneNumber regex pattern,
+
 ## 1.1.2
 
 ### Aug 22, 2025
@@ -56,7 +66,8 @@ All notable changes to this project will be documented in this file.
 
 **♻️ Changed**
 
-* `ImageValidationExtension.isValidImagePath` updated to return `String?` via `validateImagePath()` method for error messaging.
+* `ImageValidationExtension.isValidImagePath` updated to return `String?` via `validateImagePath()`
+  method for error messaging.
 
 ---
 

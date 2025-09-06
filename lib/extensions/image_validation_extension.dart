@@ -1,5 +1,5 @@
 extension ImageValidationExtension on String? {
-  /// Validates if the nullable string is a valid image file path.
+  /// Validates if the nullable string is a valid image file path or filename.
   /// Returns `null` if valid, otherwise an error message.
   String? validateImagePath() {
     if (this == null || this!.trim().isEmpty) {
@@ -7,7 +7,8 @@ extension ImageValidationExtension on String? {
     }
 
     final lowerPath = this!.toLowerCase();
-    final validExtensions = [
+
+    const validExtensions = [
       '.jpg',
       '.jpeg',
       '.png',
@@ -19,7 +20,7 @@ extension ImageValidationExtension on String? {
 
     final isValid = validExtensions.any(lowerPath.endsWith);
     if (!isValid) {
-      return 'Invalid image path. Supported formats: ${validExtensions.join(', ')}';
+      return 'Invalid image format. Supported: ${validExtensions.join(', ')}';
     }
 
     return null;
