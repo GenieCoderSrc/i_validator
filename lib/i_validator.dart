@@ -5,6 +5,7 @@ export 'enum/password_strength.dart';
 export 'extensions/file_validation_extension.dart';
 export 'extensions/image_validation_extension.dart';
 export 'extensions/validator_patterns.dart';
+export 'extensions/x_file_image_validation_extension.dart';
 export 'utils/validator_mixin.dart';
 export 'utils/verify.dart';
 export 'validators/confirm_password_required_validator.dart';

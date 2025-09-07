@@ -6,11 +6,15 @@ All notable changes to this project will be documented in this file.
 
 ### Sep 5, 2025
 
+### ✨ Added
+
+- Added `validateImageFile` extension for XFile.
+
 ### ✨ Fixed
 
-- Fixed email regex pattern,
-- Fixed image regex pattern,
-- Fixed PhoneNumber regex pattern,
+- Fixed email regex pattern.
+- Fixed image regex pattern.
+- Fixed PhoneNumber regex pattern.
 
 ## 1.1.2
 
