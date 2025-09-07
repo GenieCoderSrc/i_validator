@@ -1,22 +1,20 @@
-// /// Username regex
-// final RegExp usernamePattern = RegExp(
-//   r'^[a-zA-Z0-9][a-zA-Z0-9_.]+[a-zA-Z0-9]$',
-// );
-// final RegExp namePattern = RegExp(
-//   r"^([A-Z][A-Za-z.'\-]+) (?:([A-Z][A-Za-z.'\-]+) )?([A-Z][A-Za-z.'\-]+)$",
-// );
-//
-// final RegExp phoneNumberPattern = RegExp(r'^\+?[0-9]{7,15}$');
-//
-// final RegExp otpCode = RegExp(r"^\d{6}$");
-// final RegExp pinNumber = RegExp(r'^\d{4}$|^\d{6}$');
-// final RegExp emailPattern = RegExp(
-//   r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$',
-// );
-// final RegExp easyPassword = RegExp(r'^\S{6,}$');
-// final RegExp passwordStrong = RegExp(
-//   r'^(?=.*?[A-Z])(?=(.*[a-z]){1,})(?=(.*[\d]){1,})(?=(.*[\W]){1,})(?!.*\s).{6,16}$',
-// );
-// // const Pattern image = r'.(jpeg|jpg|gif|png|bmp)$';
-// // final RegExp imageFilePattern = RegExp(r'.(jpe?g|png|gif|bmp|webp|svg)$', caseSensitive: false);
-// const Pattern image = r'.(jpe?g|png|gif|bmp|webp|svg)$';
+/// Username regex
+final RegExp usernamePattern = RegExp(
+  r'^[a-zA-Z0-9][a-zA-Z0-9_.]+[a-zA-Z0-9]$',
+);
+final RegExp namePattern = RegExp(
+  r"^([A-Z][A-Za-z.'\-]+) (?:([A-Z][A-Za-z.'\-]+) )?([A-Z][A-Za-z.'\-]+)$",
+);
+
+final RegExp phoneNumberPattern = RegExp(r'^\+?[0-9]{7,15}$');
+
+final RegExp otpCode = RegExp(r"^\d{6}$");
+final RegExp pinNumber = RegExp(r'^\d{4}$|^\d{6}$');
+final RegExp emailPattern = RegExp(
+  r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$',
+);
+final RegExp easyPassword = RegExp(r'^\S{6,}$');
+final RegExp passwordStrong = RegExp(
+  r'^(?=.*?[A-Z])(?=(.*[a-z]){1,})(?=(.*[\d]){1,})(?=(.*[\W]){1,})(?!.*\s).{6,16}$',
+);
+const Pattern image = r'.(jpe?g|png|gif|bmp|webp|svg)$';
