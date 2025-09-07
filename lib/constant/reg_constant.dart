@@ -19,4 +19,4 @@ final RegExp passwordStrong = RegExp(
 );
 // const Pattern image = r'.(jpeg|jpg|gif|png|bmp)$';
 // final RegExp imageFilePattern = RegExp(r'.(jpe?g|png|gif|bmp|webp|svg)$', caseSensitive: false);
-const Pattern image  = r'.(jpe?g|png|gif|bmp|webp|svg)$';
+const Pattern image = r'.(jpe?g|png|gif|bmp|webp|svg)$';
