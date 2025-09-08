@@ -26,3 +26,8 @@ export 'validators/required_field_validator.dart';
 export 'validators/required_list_validator.dart';
 export 'validators/required_string_validator.dart';
 export 'validators/required_true_validator.dart';
+export 'validators/number_validator.dart';
+export 'validators/integer_validator.dart';
+export 'validators/decimal_validator.dart';
+export 'validators/positive_number_validator.dart';
+export 'validators/negative_number_validator.dart';
