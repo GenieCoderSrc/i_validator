@@ -18,4 +18,3 @@ class PositiveNumberValidator extends IValidator<String> {
     return null;
   }
 }
-

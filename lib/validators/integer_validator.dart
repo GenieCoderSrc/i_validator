@@ -15,4 +15,3 @@ class IntegerValidator extends IValidator<String> {
     return null;
   }
 }
-

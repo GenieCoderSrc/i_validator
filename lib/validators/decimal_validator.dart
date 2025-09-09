@@ -15,4 +15,3 @@ class DecimalValidator extends IValidator<String> {
     return null;
   }
 }
-
