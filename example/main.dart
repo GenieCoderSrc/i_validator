@@ -100,7 +100,7 @@ void main() {
   debugPrint('  Valid: ${requiredList.validate([1, 2]) ?? "✅ Valid"}');
   debugPrint('  Invalid: ${requiredList.validate([]) ?? "✅ Valid"}');
 
-  debugPrint('\n🔘 RequiredTrueValidator');
+  debugPrint('🔘 RequiredTrueValidator');
   final requiredTrue = RequiredTrueValidator();
   debugPrint('  Valid: ${requiredTrue.validate(true) ?? "✅ Valid"}');
   debugPrint('  Invalid: ${requiredTrue.validate(false) ?? "✅ Valid"}');
