@@ -1,5 +1,3 @@
-import 'package:flutter/foundation.dart';
-
 import 'i_validator.dart';
 
 // Positive number (> 0)
