@@ -1,14 +1,18 @@
 import 'i_validator.dart';
 
 // Integer only
-class IntegerValidator extends IValidator<num> {
+class IntegerValidator extends IValidator<String> {
   final String error;
 
-  IntegerValidator({this.error = "Value must be an integer"});
+  IntegerValidator({this.error = "Enter a valid integer"});
 
   @override
-  String? validate(num? value) {
-    if (value == null || value % 1 != 0) return error;
+  String? validate(String? input) {
+    if (input == null || input.trim().isEmpty) return error;
+
+    if (int.tryParse(input) == null) return error;
+
     return null;
   }
 }
+

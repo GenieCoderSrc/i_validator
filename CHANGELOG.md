@@ -2,17 +2,29 @@
 
 All notable changes to this project will be documented in this file.
 
+## 1.1.6
+
+### Sep 9, 2025
+
+### 🐛 Fixed
+
+- NumberValidator
+- IntegerValidator
+- DecimalValidator
+- PositiveNumberValidator
+- NegativeNumberValidator
+
 ## 1.1.5
 
 ### Sep 9, 2025
 
 ### ✨ Added
 
-- Added NumberValidator.
-- Added IntegerValidator.
-- Added DecimalValidator.
-- Added PositiveNumberValidator.
-- Added NegativeNumberValidator.
+- NumberValidator.
+- IntegerValidator.
+- DecimalValidator.
+- PositiveNumberValidator.
+- NegativeNumberValidator.
 
 ## 1.1.4
 

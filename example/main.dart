@@ -68,18 +68,18 @@ void main() {
   // --- 🔢 NUMERIC VALIDATORS ---
   debugPrint('\n--- 🔢 NUMERIC VALIDATORS ---');
 
-  debugPrint('\n⬆️ MinValueValidator<int> (min: 10)');
-  final minIntValidator = MinValueValidator<int>(min: 10);
-  debugPrint('  Valid (15): ${minIntValidator.validate(15) ?? "✅ Valid"}');
-  debugPrint('  Invalid (5): ${minIntValidator.validate(5) ?? "✅ Valid"}');
+  debugPrint('\n⬆️ MinValueValidator(min: 10)');
+  final minIntValidator = MinValueValidator(min: 10);
+  debugPrint('  Valid (15): ${minIntValidator.validate('15') ?? "✅ Valid"}');
+  debugPrint('  Invalid (5): ${minIntValidator.validate('5') ?? "✅ Valid"}');
 
-  debugPrint('\n⬇️ MaxValueValidator<double> (max: 99.5)');
-  final maxDoubleValidator = MaxValueValidator<double>(max: 99.5);
+  debugPrint('\n⬇️ MaxValueValidator(max: 99.5)');
+  final maxDoubleValidator = MaxValueValidator(max: 99.5);
   debugPrint(
-    '  Valid (88.8): ${maxDoubleValidator.validate(88.8) ?? "✅ Valid"}',
+    '  Valid (88.8): ${maxDoubleValidator.validate('88.8') ?? "✅ Valid"}',
   );
   debugPrint(
-    '  Invalid (120.0): ${maxDoubleValidator.validate(120.0) ?? "✅ Valid"}',
+    '  Invalid (120.0): ${maxDoubleValidator.validate('120.0') ?? "✅ Valid"}',
   );
 
   // --- ✔️ REQUIRED VALIDATORS ---

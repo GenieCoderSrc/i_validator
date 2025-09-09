@@ -1,14 +1,21 @@
 import 'package:i_validator/i_validator.dart';
 
-class MaxValueValidator<T extends num> extends IValidator<T> {
-  final T max;
+class MaxValueValidator extends IValidator<String> {
+  final num max;
 
   MaxValueValidator({required this.max});
 
   @override
-  String? validate(T? input) {
-    if (input == null) return 'This field is required';
-    if (input > max) return 'Value must be at most $max';
+  String? validate(String? input) {
+    if (input == null || input.trim().isEmpty) {
+      return 'This field is required';
+    }
+
+    final num? value = num.tryParse(input);
+    if (value == null) return 'Invalid number';
+
+    if (value > max) return 'Value must be at most $max';
+
     return null;
   }
 }
