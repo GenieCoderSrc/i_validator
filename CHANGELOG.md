@@ -1,5 +1,14 @@
 # Changelog
 
+## 1.1.7
+
+### Jun 15, 2026
+
+### ✨ Updated
+- Updated `cross_file: ^0.3.5+2`
+
+
+
 All notable changes to this project will be documented in this file.
 
 ## 1.1.6
