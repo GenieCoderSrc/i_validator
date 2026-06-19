@@ -30,8 +30,13 @@ A Flutter package offering robust validation utilities for forms, inputs, and bu
 - **`PinNumberValidator`** – 4 or 6-digit PIN validation.
 - **`ConfirmPasswordValidator`** – Compares two password fields.
 
-### **📂 File Validation**
-- **File type validation** – Checks image formats (e.g., PNG, JPEG) via extensions.
+### **📂 File Validation (Extensions)**
+The package provides powerful extensions for validating file paths and `XFile` objects:
+- **Image Validation**: Validate image paths (`String?`) and `XFile` objects.
+- **Video Validation**: Validate video paths (`String?`) and `XFile` objects.
+- **Audio Validation**: Validate audio paths (`String?`) and `XFile` objects.
+- **Document Validation**: Validate document paths (`String?`) and `XFile` objects.
+- **List Validation**: Validate lists of file paths or `XFile` objects.
 
 ---
 
@@ -86,13 +91,24 @@ final validator = RegexValidator(
 print(validator.validate("flutter")); // Error message  
 ```
 
-### **6. List Validation**
+### **6. File Validation (Extensions)**
+```dart
+// Validate image path
+final String? path = "profile.jpg";
+final error = path.validateImagePath(); 
+
+// Validate XFile object
+final xfile = XFile('document.pdf');
+final docError = xfile.validateDocumentFile();
+```
+
+### **7. List Validation**
 ```dart
 final error = RequiredListValidator().validate([]);  
 print(error); // "List cannot be empty"  
 ```
 
-### **7. Date Validation**
+### **8. Date Validation**
 ```dart
 final error = RequiredDateValidator().validate(null);  
 print(error); // "A date is required"  

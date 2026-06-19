@@ -2,18 +2,24 @@
 
 All notable changes to this project will be documented in this file.
 
+## 1.1.8
 
+### Jun 18, 2026
 
+### ♻️ Refactored
+
+- Refactored `file_validator_extensions` into domain-specific subfolders (`audio`, `video`, `image`, `document`,
+  `x_file`, `generic`) for better maintainability.
+- Updated `i_validator.dart` exports to reflect the new directory structure.
+- Updated example files to demonstrate the new domain-based validation extensions.
 
 ## 1.1.7
 
 ### Jun 15, 2026
 
 ### ✨ Updated
+
 - Updated `cross_file: ^0.3.5+2`
-
-
-
 
 ## 1.1.6
 
@@ -256,4 +262,3 @@ Initial validators:
 ---
 
 *For detailed usage, refer to the example files.*
-
