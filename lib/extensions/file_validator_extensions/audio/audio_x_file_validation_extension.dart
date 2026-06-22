@@ -1,13 +1,13 @@
 import 'package:cross_file/cross_file.dart';
 import 'package:i_validator/i_validator.dart';
 
-import 'image_validation_extension.dart';
+import 'audio_validation_extension.dart';
 
-extension XFileImageValidationExtension on XFile {
-  /// Validates if the XFile represents a valid image file.
+extension AudioXFileValidationExtension on XFile {
+  /// Validates if the XFile represents a valid audio file.
   /// Uses [name] on Web (since path is a blob), otherwise [path].
-  String? validateImageFile() {
+  String? validateAudioFile() {
     final source = path.toLowerCase().startsWith('blob:') ? name : path;
-    return source.validateImagePath();
+    return source.validateAudioPath();
   }
 }
