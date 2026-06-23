@@ -3,7 +3,7 @@ import 'package:i_validator/constant/image_constants/image_field_error_messages.
 import '../image/image_validation_extension.dart';
 import '../../validation_error_list_extension.dart';
 
-extension ListStringImageValidationExtension on List<String>? {
+extension ImageListFilePathValidationExtension on List<String>? {
   /// Returns all validation errors for image paths.
   ///
   /// Returns an empty list if all paths are valid.

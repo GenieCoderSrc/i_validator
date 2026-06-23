@@ -4,7 +4,7 @@ import 'package:i_validator/constant/image_constants/image_field_error_messages.
 import '../image/image_validation_extension.dart';
 import '../../validation_error_list_extension.dart';
 
-extension ListImageFileValidationExtension on List<XFile>? {
+extension ImageListXFileValidationExtension on List<XFile>? {
   /// Returns all validation errors for image files.
   ///
   /// Returns an empty list if all files are valid.
