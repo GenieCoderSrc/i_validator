@@ -2,13 +2,25 @@
 
 All notable changes to this project will be documented in this file.
 
+## 1.1.9
+
+### Jun 23, 2026
+
+### 🐛 Fixed
+
+- Fixed `PositiveNumberValidator` imports.
+- Fixed `NegativeNumberValidator` imports.
+- Removed `x_file`, `generic` file validator extensions.
+- Added `XFile` list validators for (`audio`, `video`, `image`, `document`)
+
 ## 1.1.8
 
 ### Jun 18, 2026
 
 ### ♻️ Refactored
 
-- Refactored `file_validator_extensions` into domain-specific subfolders (`audio`, `video`, `image`, `document`,
+- Refactored `file_validator_extensions` into domain-specific subfolders (`audio`, `video`, `image`,
+  `document`,
   `x_file`, `generic`) for better maintainability.
 - Updated `i_validator.dart` exports to reflect the new directory structure.
 - Updated example files to demonstrate the new domain-based validation extensions.
