@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file.
 
+## 1.2.0
+
+### Sep 26, 2026
+
+### ✨ Updated
+
+- Updated`cross_file ^0.4.0`.
+
 ## 1.1.9
 
 ### Jun 23, 2026
