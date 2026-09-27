@@ -5,9 +5,20 @@ import 'audio_validation_extension.dart';
 
 extension AudioXFileValidationExtension on XFile {
   /// Validates if the XFile represents a valid audio file.
-  /// Uses [name] on Web (since path is a blob), otherwise [path].
   String? validateAudioFile() {
-    final source = path.toLowerCase().startsWith('blob:') ? name : path;
+    // Check if it's a traditional file system path or parse the URI string
+    final source = this is FileSystemXFile
+        ? (this as FileSystemXFile).path
+        : Uri.parse(uri).path;
+
     return source.validateAudioPath();
   }
 }
+// extension AudioXFileValidationExtension on XFile {
+//   /// Validates if the XFile represents a valid audio file.
+//   /// Uses [name] on Web (since path is a blob), otherwise [path].
+//   String? validateAudioFile() {
+//     final source = path.toLowerCase().startsWith('blob:') ? name : path;
+//     return source.validateAudioPath();
+//   }
+// }
