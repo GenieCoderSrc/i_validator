@@ -6,18 +6,18 @@ import '../../validation_error_list_extension.dart';
 
 extension ImageListXFileValidationExtension on List<XFile>? {
   /// Returns all validation errors for image files.
-  ///
-  /// Returns an empty list if all files are valid.
   List<String> validateImageFileErrors() {
-    return collectValidationErrors(
-      (file) => file.path.validateImagePath(),
-      emptyError: ImageFieldErrorMessages.imageRequired,
-    );
+    return collectValidationErrors((file) {
+      // Handle both FileSystemXFile and URI-based files safely
+      final path = (file is FileSystemXFile)
+          ? file.path
+          : Uri.parse(file.uri).toFilePath();
+
+      return path.validateImagePath();
+    }, emptyError: ImageFieldErrorMessages.imageRequired);
   }
 
   /// Returns the first validation error.
-  ///
-  /// Returns `null` if all files are valid.
   String? validateImageFiles() {
     final errors = validateImageFileErrors();
     return errors.isEmpty ? null : errors.first;

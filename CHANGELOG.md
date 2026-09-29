@@ -4,10 +4,11 @@ All notable changes to this project will be documented in this file.
 
 ## 1.2.0
 
-### Sep 26, 2026
+### Sep 27, 2026
 
-### ✨ Updated
+### 🐛 Fixed
 
+- Fixed `XFile` and `List<XFile>` validation extensions for audio, video, image, and document to correctly handle `FileSystemXFile` and URI paths.
 - Updated`cross_file ^0.4.0`.
 
 ## 1.1.9
