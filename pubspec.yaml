@@ -9,7 +9,6 @@ issue_tracker: https://github.com/GenieCoderSrc/i_validator/issues
 
 environment:
   sdk: '>=3.6.0 <4.0.0'
-resolution: workspace # <-- Required for Melos 8 & Pub Workspaces
 
 resolution: workspace
 
@@ -22,7 +21,7 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  
+
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
