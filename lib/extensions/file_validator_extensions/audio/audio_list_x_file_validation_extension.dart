@@ -1,8 +1,8 @@
 import 'package:cross_file/cross_file.dart';
 import 'package:i_validator/constant/file_field_error_messages.dart';
 
-import 'audio_validation_extension.dart';
 import '../../validation_error_list_extension.dart';
+import 'audio_validation_extension.dart';
 
 extension AudioListXFileValidationExtension on List<XFile>? {
   /// Returns all validation errors for audio files.
