@@ -8,12 +8,8 @@ extension DocumentListXFileValidationExtension on List<XFile>? {
   /// Returns all validation errors for document files.
   List<String> validateDocumentFileErrors() {
     return collectValidationErrors((file) {
-      // Handle both FileSystemXFile and URI-based files safely
-      final path = (file is FileSystemXFile)
-          ? file.path
-          : Uri.parse(file.uri).toFilePath();
-
-      return path.validateDocumentPath();
+      final source = file.path.toLowerCase().startsWith('blob:') ? file.name : file.path;
+      return source.validateDocumentPath();
     }, emptyError: FileFieldErrorMessages.fileRequired);
   }
 
@@ -30,10 +26,14 @@ extension DocumentListXFileValidationExtension on List<XFile>? {
 // extension DocumentListXFileValidationExtension on List<XFile>? {
 //   /// Returns all validation errors for document files.
 //   List<String> validateDocumentFileErrors() {
-//     return collectValidationErrors(
-//       (file) => file.path.validateDocumentPath(),
-//       emptyError: FileFieldErrorMessages.fileRequired,
-//     );
+//     return collectValidationErrors((file) {
+//       // Handle both FileSystemXFile and URI-based files safely
+//       final path = (file is FileSystemXFile)
+//           ? file.path
+//           : Uri.parse(file.uri).toFilePath();
+//
+//       return path.validateDocumentPath();
+//     }, emptyError: FileFieldErrorMessages.fileRequired);
 //   }
 //
 //   /// Returns the first validation error.

@@ -5,12 +5,21 @@ import 'document_validation_extension.dart';
 
 extension DocumentXFileValidationExtension on XFile {
   /// Validates if the XFile represents a valid document file.
+  /// Uses [name] on Web (since path is a blob), otherwise [path].
   String? validateDocumentFile() {
-    // Check if it's a traditional file system path or parse the URI string
-    final source = this is FileSystemXFile
-        ? (this as FileSystemXFile).path
-        : Uri.parse(uri).path;
-
+    final source = path.toLowerCase().startsWith('blob:') ? name : path;
     return source.validateDocumentPath();
   }
 }
+
+// extension DocumentXFileValidationExtension on XFile {
+//   /// Validates if the XFile represents a valid document file.
+//   String? validateDocumentFile() {
+//     // Check if it's a traditional file system path or parse the URI string
+//     final source = this is FileSystemXFile
+//         ? (this as FileSystemXFile).path
+//         : Uri.parse(uri).path;
+//
+//     return source.validateDocumentPath();
+//   }
+// }

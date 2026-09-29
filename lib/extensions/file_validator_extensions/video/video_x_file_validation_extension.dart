@@ -5,12 +5,21 @@ import 'video_validation_extension.dart';
 
 extension VideoXFileValidationExtension on XFile {
   /// Validates if the XFile represents a valid video file.
+  /// Uses [name] on Web (since path is a blob), otherwise [path].
   String? validateVideoFile() {
-    // Check if it's a traditional file system path or parse the URI string
-    final source = this is FileSystemXFile
-        ? (this as FileSystemXFile).path
-        : Uri.parse(uri).path;
-
+    final source = path.toLowerCase().startsWith('blob:') ? name : path;
     return source.validateVideoPath();
   }
 }
+
+// extension VideoXFileValidationExtension on XFile {
+//   /// Validates if the XFile represents a valid video file.
+//   String? validateVideoFile() {
+//     // Check if it's a traditional file system path or parse the URI string
+//     final source = this is FileSystemXFile
+//         ? (this as FileSystemXFile).path
+//         : Uri.parse(uri).path;
+//
+//     return source.validateVideoPath();
+//   }
+// }

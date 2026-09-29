@@ -8,12 +8,8 @@ extension ImageListXFileValidationExtension on List<XFile>? {
   /// Returns all validation errors for image files.
   List<String> validateImageFileErrors() {
     return collectValidationErrors((file) {
-      // Handle both FileSystemXFile and URI-based files safely
-      final path = (file is FileSystemXFile)
-          ? file.path
-          : Uri.parse(file.uri).toFilePath();
-
-      return path.validateImagePath();
+      final source = file.path.toLowerCase().startsWith('blob:') ? file.name : file.path;
+      return source.validateImagePath();
     }, emptyError: ImageFieldErrorMessages.imageRequired);
   }
 
@@ -26,3 +22,26 @@ extension ImageListXFileValidationExtension on List<XFile>? {
   /// Whether all image files are valid.
   bool get areValidImageFiles => validateImageFiles() == null;
 }
+
+// extension ImageListXFileValidationExtension on List<XFile>? {
+//   /// Returns all validation errors for image files.
+//   List<String> validateImageFileErrors() {
+//     return collectValidationErrors((file) {
+//       // Handle both FileSystemXFile and URI-based files safely
+//       final path = (file is FileSystemXFile)
+//           ? file.path
+//           : Uri.parse(file.uri).toFilePath();
+//
+//       return path.validateImagePath();
+//     }, emptyError: ImageFieldErrorMessages.imageRequired);
+//   }
+//
+//   /// Returns the first validation error.
+//   String? validateImageFiles() {
+//     final errors = validateImageFileErrors();
+//     return errors.isEmpty ? null : errors.first;
+//   }
+//
+//   /// Whether all image files are valid.
+//   bool get areValidImageFiles => validateImageFiles() == null;
+// }
