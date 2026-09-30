@@ -8,7 +8,8 @@ extension ImageListXFileValidationExtension on List<XFile>? {
   /// Returns all validation errors for image files.
   List<String> validateImageFileErrors() {
     return collectValidationErrors((file) {
-      final source = file.path.toLowerCase().startsWith('blob:') ? file.name : file.path;
+      final source =
+          file.path.toLowerCase().startsWith('blob:') ? file.name : file.path;
       return source.validateImagePath();
     }, emptyError: ImageFieldErrorMessages.imageRequired);
   }

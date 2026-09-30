@@ -7,8 +7,7 @@ const kOtpNumericError = 'OTP must be numeric';
 const kPasswordRequiredError = 'Password is required';
 const kPasswordLengthFormat = 'Password must be at least %d characters';
 const kPasswordInvalidError = 'Invalid Password';
-const kPasswordStrongError =
-    'Must contains at least: '
+const kPasswordStrongError = 'Must contains at least: '
     '\none uppercase letter, one lowercase letter,'
     '\none number & one special character (symbol)'
     '\nMinimum character : 8';

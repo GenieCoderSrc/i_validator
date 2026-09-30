@@ -4,7 +4,6 @@ import 'package:i_validator/constant/file_field_error_messages.dart';
 import '../../validation_error_list_extension.dart';
 import 'audio_validation_extension.dart';
 
-
 extension AudioListXFileValidationExtension on List<XFile>? {
   /// Returns all validation errors for audio files.
   List<String> validateAudioFileErrors() {
@@ -23,7 +22,6 @@ extension AudioListXFileValidationExtension on List<XFile>? {
   /// Whether all audio files are valid.
   bool get areValidAudioFiles => validateAudioFiles() == null;
 }
-
 
 // extension AudioListXFileValidationExtension on List<XFile>? {
 //   /// Returns all validation errors for audio files.

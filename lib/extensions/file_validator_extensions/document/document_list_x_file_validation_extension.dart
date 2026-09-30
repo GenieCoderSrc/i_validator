@@ -8,7 +8,8 @@ extension DocumentListXFileValidationExtension on List<XFile>? {
   /// Returns all validation errors for document files.
   List<String> validateDocumentFileErrors() {
     return collectValidationErrors((file) {
-      final source = file.path.toLowerCase().startsWith('blob:') ? file.name : file.path;
+      final source =
+          file.path.toLowerCase().startsWith('blob:') ? file.name : file.path;
       return source.validateDocumentPath();
     }, emptyError: FileFieldErrorMessages.fileRequired);
   }
