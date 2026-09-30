@@ -9,7 +9,6 @@ All notable changes to this project will be documented in this file.
 ### 🐛 Fixed
 
 - Fixed `XFile` and `List<XFile>` validation extensions for audio, video, image, and document to correctly handle `FileSystemXFile` and URI paths.
-- Updated`cross_file ^0.4.0`.
 
 ## 1.1.9
 
